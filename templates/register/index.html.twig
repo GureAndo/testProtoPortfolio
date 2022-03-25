@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}myblog{% endblock %}
+
+{% block body %}
+
+<div class="row">
+    <h2 class="text-center text-danger">Insrcyption</h2>
+    <div class="col-md-6 mx-auto">
+        <!--form(nom de la clef) function qui materialise le formulaire-->
+        {{form(register)}}
+    </div>
+</div>
+
+{% endblock %}
+
