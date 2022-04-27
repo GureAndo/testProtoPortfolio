@@ -20,7 +20,7 @@ class Experiance
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $posteOccuper;
+    private $poste;
 
     /**
      * @ORM\Column(type="date")
@@ -35,26 +35,31 @@ class Experiance
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $Entreprise;
+    private $entreprise;
 
     /**
      * @ORM\Column(type="text")
      */
     private $description;
 
+    /**
+     * @ORM\Column(type="date")
+     */
+    private $dateFin;
+
     public function getId(): ?int
     {
         return $this->id;
     }
 
-    public function getPosteOccuper(): ?string
+    public function getPoste(): ?string
     {
-        return $this->posteOccuper;
+        return $this->poste;
     }
 
-    public function setPosteOccuper(string $posteOccuper): self
+    public function setPoste(string $poste): self
     {
-        $this->posteOccuper = $posteOccuper;
+        $this->poste = $poste;
 
         return $this;
     }
@@ -85,12 +90,12 @@ class Experiance
 
     public function getEntreprise(): ?string
     {
-        return $this->Entreprise;
+        return $this->entreprise;
     }
 
-    public function setEntreprise(string $Entreprise): self
+    public function setEntreprise(string $entreprise): self
     {
-        $this->Entreprise = $Entreprise;
+        $this->entreprise = $entreprise;
 
         return $this;
     }
@@ -103,6 +108,18 @@ class Experiance
     public function setDescription(string $description): self
     {
         $this->description = $description;
+
+        return $this;
+    }
+
+    public function getDateFin(): ?\DateTimeInterface
+    {
+        return $this->dateFin;
+    }
+
+    public function setDateFin(\DateTimeInterface $dateFin): self
+    {
+        $this->dateFin = $dateFin;
 
         return $this;
     }

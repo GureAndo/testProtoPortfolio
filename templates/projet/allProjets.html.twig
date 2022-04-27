@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Tous les Projets{% endblock %}
+
+{% block body %}
+{# 
+la card bootstrap que je pence a echappé
+<section class='container'>
+    <div class='container'>
+        <h1 class="text-center mt-5 comp">Liste des Projets</h1>
+        <!--changer les card et Ajouter un Isotop -->
+        <div class="row mt-5">
+            {% for projets in projets %}
+                <div class="card col-md-3 mx-2 mt-3" style="width:19rem">
+                    <img class="card-img-top" style="height:350px" src="{{asset('upload/img/' ~ projets.img)}}">
+
+                    <div class="card-body">
+                        <h5 class="text-center card-title text mt-3">{{projets.titre}}</h5>
+                        <a class="btn btn-primary mt-2 " href="{{path('app_single_projet', {id:projets.id})}}">Voir plus</a>
+                        <a class="btn btn-primary mt-2 " href="{{projets.lien}}" target='_blank'>GitHub</a>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</section> #}
+<h1 class="mt-5 mb-5 comp">Liste des Projets</h1>
+<div class="container">
+    <div class="row">
+     {% for projets in projets %}
+        <div class="col-sm-6 col-md-5 offset-md-1 col-lg-4 offset-lg-0 col-xl-3 offset-xl-0 mb-5">
+            <div class="cards shine-overlay">
+                <div class="card-bg" ><img class="card-img-top" style="height:350px" src="{{asset('upload/img/' ~ projets.img)}}"></div>
+                <h5 class="text-center text-white card-title text mt-3">{{projets.titre}}</h5>
+                <div class="shine"></div>
+            </div>
+            <a class="btn btn mt-2 " href="{{projets.projet}}" target='_blank'>Voir plus</a>
+            <a class="btn btn mt-2 " href="{{projets.lien}}" target='_blank'>GitHub</a>
+        </div>
+     {% endfor %}
+    </div>
+</div>    
+{% endblock %}

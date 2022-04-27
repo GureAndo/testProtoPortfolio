@@ -23,14 +23,14 @@ class Competance
     private $language;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="integer")
      */
-    private $niveauLanguage;
+    private $niveau;
 
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $logoLanguage;
+    private $logo;
 
     public function getId(): ?int
     {
@@ -49,26 +49,26 @@ class Competance
         return $this;
     }
 
-    public function getNiveauLanguage(): ?string
+    public function getNiveau(): ?int
     {
-        return $this->niveauLanguage;
+        return $this->niveau;
     }
 
-    public function setNiveauLanguage(string $niveauLanguage): self
+    public function setNiveau(int $niveau): self
     {
-        $this->niveauLanguage = $niveauLanguage;
+        $this->niveau = $niveau;
 
         return $this;
     }
 
-    public function getLogoLanguage(): ?string
+    public function getLogo(): ?string
     {
-        return $this->logoLanguage;
+        return $this->logo;
     }
 
-    public function setLogoLanguage(string $logoLanguage): self
+    public function setLogo(string $logo): self
     {
-        $this->logoLanguage = $logoLanguage;
+        $this->logo = $logo;
 
         return $this;
     }

@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello DanganController!{% endblock %}
+
+{% block body %}
+<h1 class="text-center my-5">{{projets.titre}}</h1>
+
+<div class="container">
+
+  <div class="card mb-3">
+    <img src="{{asset('upload/img/' ~ projets.img)}}" class="card-img-top"/>
+
+    <div class="card-body">
+    <p class='text'>Voir le projet sur mon GitHub</p>
+      <a class="btn btn-primary mx-5 " href="{{projets.lien}}" target='_blank'>GitHub</a>
+    </div>
+  </div>
+{% endblock %}

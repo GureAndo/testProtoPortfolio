@@ -1,0 +1,77 @@
+{% extends 'base.html.twig' %} {% block title %}Géstion{%
+endblock %} {% block body %}
+
+
+
+<section>
+
+  <table class="table table-dark mt-5">
+    <thead>
+      <tr id="projet">
+        <th scope="col">#</th>
+        <th scope="col">titre</th>
+        <th scope="col">lien</th>
+        <th scope="col">img</th>
+        <th scope="col">Supprimer</th>
+        <th scope="col">Modifier</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      {% for projets in projets %}
+      <tr>
+        <td scop="row">{{ projets.id }}</td>
+        <td>{{ projets.titre}}</td>
+        <td>{{ projets.lien}}</td>
+
+        <td>
+          <img style="width: 90px; height:90px" src="{{asset('upload/img/' ~ projets.img)}}" />
+        </td>
+
+        <td>
+          <a
+          
+            href="{{ path('app_admin_delete_projet', { id: projets.id }) }}"
+            ><i class="text-danger fa fa-trash"></i></a
+          >
+        </td>
+
+        <td>
+          <a
+          
+            href="{{ path('app_admin_edit_projet', { id: projets.id }) }}"
+            ><i class="text-warning fa fa-edit"></ir</a
+          >
+        </td>
+      </tr>
+      {% endfor %}
+      <!--tableau des comp-->
+      
+      {% for competance in competance %}
+      <tr id="comp">
+        <td scop="row">{{ competance.id }}</td>
+        <td>{{ competance.language}}</td>
+        <td>{{ competance.niveau}}</td>
+
+        <td>
+          <img style="width: 90px; height:90px;" src="{{competance.logo}}" />
+        </td>
+
+        <td>
+          <a
+            
+            href="{{ path('app_admin_delete_comp', { id: competance.id }) }}"
+            ><i class="text-danger fa fa-trash"></i></a
+          >
+        </td>
+
+        <td>
+          <a
+            
+            href="{{ path('app_admin_edit_comp', { id: competance.id }) }}"
+            ><i class="text-warning fa fa-edit"></i></a
+          >
+        </td>
+      </tr>
+      {% endfor %}
+{% endblock %}      

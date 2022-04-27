@@ -33,7 +33,7 @@ class Contact
     private $mail;
 
     /**
-     * @ORM\Column(type="text")
+     * @ORM\Column(type="string", length=255)
      */
     private $message;
 

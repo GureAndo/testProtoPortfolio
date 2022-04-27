@@ -1,0 +1,232 @@
+@import url("https://fonts.googleapis.com/css2?family=Special+Elite&display=swap");
+
+* {
+  color: white;
+  /* font-family: 'Grape Nuts'; */
+  font-family: "Special Elite";
+}
+
+nav :focus {
+  border-top: 3px solid orangered;
+}
+nav ul li a {
+  font-weight: bold;
+}
+
+nav{
+  border: 4px black solid;
+  background-color: black;
+}
+nav .b a:hover{
+  border-radius: 1rem ;
+  background-color: orangered;
+}
+
+table,
+.colorbg {
+  font-size: 20px;
+}
+
+.photo {
+  height: 300px;
+  width: 300px;
+  border: orangered solid 5px;
+  border-radius: 30%;
+}
+
+.progress-bar{
+  background-color: orangered;
+}
+
+.b{
+ justify-content: center;
+}
+
+.logo {
+  border: 5px solid orangered;
+  border-radius: 50%;
+
+}
+
+.text {
+  color: black;
+}
+
+.comp {
+  font-size: 24px;
+  font-weight: 700;
+  text-align: center;
+  border: 1px solid white;
+  border: groove 0.5em;
+  border-radius: 1em;
+  padding: 5rem;
+  margin: 3rem;
+  background-color: black;
+  opacity: 0.9;
+}
+
+.btn {
+  background-color: orangered;
+  border-radius: 1rem;
+}
+.btn:hover{
+  background-color: orange;
+}
+.burger {
+  width: 50px;
+  height: 50px;
+}
+hr {
+  background-color: orangered;
+}
+
+/*/---------card all project-----*/
+.shine-overlay {
+  position: relative;
+  overflow: hidden;
+}
+.shine-overlay:hover .shine {
+  display: block;
+}
+
+.shine {
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0) 0,
+    rgba(255, 255, 255, 0.8) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  pointer-events: none;
+  z-index: 3;
+  opacity: 0;
+  animation: shine 0.75s linear 1;
+  transform: skew(30deg);
+}
+
+@keyframes shine {
+  0% {
+    left: -50%;
+    opacity: 0;
+  }
+  50% {
+    left: 25%;
+    opacity: 0.5;
+  }
+  100% {
+    left: 100%;
+    opacity: 0;
+  }
+}
+body {
+  font-size: 14px;
+  font-weight: 500;
+  background-color: #bcaaa4;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+.title {
+  font-family: "Raleway";
+  font-size: 24px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.row {
+  --bs-gutter-x: 6rem;
+}
+
+.cards {
+  border: 0 none;
+  background-color: #333;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.66) 0 30px 60px 0;
+  margin: 0 auto;
+  max-width: 260px;
+  cursor: pointer;
+}
+.cards:before {
+  display: block;
+  padding-top: 133%;
+  content: "";
+}
+.cards:after {
+  display: block;
+  content: "";
+  position: absolute;
+  top: 5px;
+  bottom: 5px;
+  left: 5px;
+  right: 5px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  z-index: 1;
+  border-radius: 10px;
+}
+.cards:hover {
+  transform: translateY(-5px) scale(1.009) translateZ(0);
+  box-shadow: 0 24px 36px rgba(0, 0, 0, 0.11),
+    0 24px 46px var(--box-shadow-color);
+}
+
+.card-bg {
+  opacity: 0.8;
+  position: absolute;
+  top: -20px;
+  bottom: -20px;
+  left: -20px;
+  right: -20px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  pointer-events: none;
+}
+.card-bg--alt {
+  opacity: 1;
+}
+
+/*fin de la card all project*/
+/****************************************************************************************/
+
+.cont-btn {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: space-around;
+}
+.btn-nav {
+  font-size: 30px;
+  margin-top: 7%;
+  align-items: center;
+}
+.comptext h2{
+  color: white;
+}
+
+.fleche{
+  position: fixed;
+  right: 0;
+  height: 50px;
+  width: 50px;
+}
+
+.poleS{
+  height: 150px;
+  width: 150px;
+
+}
+
+.bg-dark{
+  background-image: url(https://images.assetsdelivery.com/compings_v2/monsitj/monsitj1606/monsitj160600003.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+

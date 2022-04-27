@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Glen{% endblock %}
+
+{% block body %}
+    <div class='container'>
+        <div class='row'>
+            <div class='col-md-5 mt-5 my-5'>
+                <img class='photo' src='https://scontent-cdt1-1.xx.fbcdn.net/v/t31.18172-8/29663119_1936194253092595_5645335714068146938_o.jpg?_nc_cat=110&ccb=1-5&_nc_sid=174925&_nc_ohc=_0gEtyMg6_YAX8p0K0g&_nc_ht=scontent-cdt1-1.xx&oh=00_AT_IFMO1kBZe64eWSJdWg5R--_mOTW6m90tfs7A7QThf-A&oe=626B2D40'>
+                <a class='btn btn-success mt-5 mx-5' href="{{asset ('assets/CV.pdf')}}"  target="_blank" donwload ="">telecharger mon cv</a>
+            </div>
+            
+            <div class='col-md-6 text-profil comp'> 
+                <h3>a propos</h3>
+                <hr>
+                <p>Autonome, rigoureux et passionné, je suis à la recherche d’un poste de développeur<br>. Je saurai mettre à profit toutes mes compétences et mes qualités, Grande adaptabilité à  plupart differants langages informatiques. Je suis un jeune développeur qui souhaite gagner en expérience et travailler dans un domaine qui me passionne. Jeune diplômé à la recherche d’un CDI en tant que développeur/integrateur Web. je souhaite montrer ma motivation, ma volonté de m’intégrer dans une équipe de développeurs"</p>
+                <hr>
+                <a class='mt-5 mx-5' href="https://github.com/GureAndo"  target="_blank" donwload =""><i class="fab fa-github"></i></a>
+        		<a class='mt-5 mx-5' href="https://www.linkedin.com/in/alix-petit-445507231/"  target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+            </div>
+        </div>  
+    </div>
+
+
+{% endblock %}

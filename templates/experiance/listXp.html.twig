@@ -1,0 +1,68 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Formation{% endblock %}
+
+
+{% block body %}
+<h1 class="mt-5 mb-5 comp">Formations</h1>
+<div class="container">
+    {% for xp in xp %}
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" style='color:red;' id="exampleModalLabel">Modal title</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" style='color:red;'>vous les vous vraiment supprimer l'element</div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <a href="{{path('admin_app_delete_xp',{id: xp.id})}}" class=" btn btn-danger">Supprimer</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>    
+    </div>
+   
+    <div class="row comp">
+        <div class='col-md-4 my-5'>
+            <h5 class="">{{xp.entreprise}}</h5>
+            <img class="poleS" src="https://polespublic.s3.eu-west-3.amazonaws.com/poles-logo.png" alt="">
+            <h5 class="">du {{xp.date|date('d/m/Y')}}</h5>
+            <h5 class="">au {{xp.dateFin|date('d/m/Y')}}</h5>
+            <h5 class="">à {{xp.lieu}}</h5>
+
+        </div>
+    
+        <div class=' col-md-7 '>
+            <h5 class="text-center  ">{{xp.poste}}</h5>
+            <h5 class="text-center  ">{{xp.description}}</h5>
+            <hr class='my-4'>
+
+
+            {% if is_granted ("ROLE_ADMIN")  %}
+                
+                <div class="px-4 px-lg-5 my-5">
+                    <div class="row gx-4 gx-lg-5 align-items-center">
+                            
+                        <div class="">
+                            <button class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal" type="button">
+                                <i class="bi-cart-fill me-1"></i>
+                                supprimer
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                {# <a href="{{path('admin_app_delete_xp',{id: xp.id})}}"class=" btn btn-danger">Supprimer</a><br> #}
+                <a href="{{path('admin_app_edit_xp',{id: xp.id})}}"class="btn btn-warning">Modifier</a> 
+            {% endif %}
+
+        </div>
+    </div>
+            
+    {% endfor %}
+
+</div> 
+{% endblock %}

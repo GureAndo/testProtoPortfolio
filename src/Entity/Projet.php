@@ -2,7 +2,7 @@
 
 namespace App\Entity;
 
-
+use App\Repository\ProjetRepository;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -20,7 +20,7 @@ class Projet
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $titreNom;
+    private $titre;
 
     /**
      * @ORM\Column(type="string", length=255)
@@ -28,23 +28,28 @@ class Projet
     private $lien;
 
     /**
-     * @ORM\Column(type="blob", nullable=true)
+     * @ORM\Column(type="string", length=255)
      */
-    private $image;
+    private $img;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $projet;
 
     public function getId(): ?int
     {
         return $this->id;
     }
 
-    public function getTitreNom(): ?string
+    public function getTitre(): ?string
     {
-        return $this->titreNom;
+        return $this->titre;
     }
 
-    public function setTitreNom(string $titreNom): self
+    public function setTitre(string $titre): self
     {
-        $this->titreNom = $titreNom;
+        $this->titre = $titre;
 
         return $this;
     }
@@ -61,14 +66,26 @@ class Projet
         return $this;
     }
 
-    public function getImage()
+    public function getImg(): ?string
     {
-        return $this->image;
+        return $this->img;
     }
 
-    public function setImage($image): self
+    public function setImg(string $img): self
     {
-        $this->image = $image;
+        $this->img = $img;
+
+        return $this;
+    }
+
+    public function getProjet(): ?string
+    {
+        return $this->projet;
+    }
+
+    public function setProjet(string $projet): self
+    {
+        $this->projet = $projet;
 
         return $this;
     }

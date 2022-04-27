@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Competances{% endblock %}
+
+{% block body %}
+<section>
+    <div class="container comptext">
+        <div>
+            <h1 class="comp text-center mt-5">Niveau de maitrise des diffierant framework et languages</h1>
+        </div>
+        <div class='row mt-5'>
+        {% for comp in comp %}
+            <div class='col-md-6 mt-5'>
+                    <div class='col-md-3'>
+                        <img src="{{ comp.logo }}" style="width: 90px;height: 90px;" />
+                    </div>
+                    <div class='col-md-12'>
+                        <h2>{{comp.language}}</h2>
+                    </div>
+            
+                <div class="progress col-12 mt-3">
+                    <div class="progress-bar" role="progressbar" style="width: {{comp.niveau}}%;" aria-valuenow="25%" aria-valuemin="0" aria-valuemax="100">{{comp.niveau}}%</div>
+                </div>    
+            </div>
+        {% endfor %}
+        </div>
+    </div>
+    {# <img src='https://scontent-cdt1-1.xx.fbcdn.net/v/t31.18172-8/29663119_1936194253092595_5645335714068146938_o.jpg?_nc_cat=110&ccb=1-5&_nc_sid=174925&_nc_ohc=_0gEtyMg6_YAX8p0K0g&_nc_ht=scontent-cdt1-1.xx&oh=00_AT_IFMO1kBZe64eWSJdWg5R--_mOTW6m90tfs7A7QThf-A&oe=626B2D40'> #}
+</section>
+{% endblock %}

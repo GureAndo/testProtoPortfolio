@@ -1,38 +1,54 @@
-        <nav class="navbar navbar-expand-lg navbar-warning bg-warning">
+        <nav class="navbar navbar-expand-lg  navbar-warning colorbg">
             <div class="container-fluid">
-                <a class="navbar-brand text-white" href="{{ path('app_home') }}">MATERIA</a>
+                <a class="navbar-brand text-white" id='logo' href="{{ path('app_home') }}"><img class='logo' src="https://avatars.githubusercontent.com/u/92990114?v=4" alt=""></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
+                    <span class="navbar-toggler-icon"><img class='burger' src="https://cdn4.iconfinder.com/data/icons/evil-icons-user-interface/64/menu-512.png" alt=""></span>
                 </button>
-                {%  if is_granted('ROLE_ADMIN') %}
+                
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link active text-white" aria-current="page" href="">ajouter article</a>
+                            <a class="nav-link active text-white" aria-current="page" href="{{path('app_all_projet')}}">Mes realisations |</a>
                         </li>
-
                         <li class="nav-item">
-                            <a class="nav-link text-white" href="">liste user</a>
+                            <a class="nav-link text-white" href="{{path('app_all_comp')}}">Mes competences |</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="{{path('app_all_xp')}}">Formations |</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="{{path('app_contact')}}">Contact |</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="{{path('app_profil')}}">A propos |</a>
+                        </li>
+						<li class="nav-item">
+                            <a class="nav-link text-white" href="{{asset ('assets/CV.pdf')}}" target="_blank">Telecharger mon cv</a>
                         </li>
                     </ul>
-                {% endif %}
+                {%  if is_granted('ROLE_ADMIN') %}
                     <div class="dropdown mr-3">
-                        <button class="btn btn-secondary dropdown-toggle bg-warning" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                        <button class="btn btn-secondary dropdown-toggle buttonbg mx-5" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                             ADMIN
                         </button>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                             {% if not app.user %}
-                            <li><a class="dropdown-item" href="">Insrcyption</a></li>
+                            <li><a class="dropdown-item" href="">Insrcyption |</a></li>
                             <li><a class="dropdown-item" href="{{path('app_login')}}">connexion</a></li>
     
                             {% else %}
     
-                            <li><a class="dropdown-item" href="">deconexion</a></li>
-                            <li><a class="dropdown-item" href="">mon Compte</a></li>
-                           
+                            <li><a class="dropdown-item" href="{{path('app_logout')}}">deconexion</a></li>
+                            <li><a class="dropdown-item" href="{{path('app_admin_all_projet')}}">gestion</a></li>
+                            <li><a class="dropdown-item" href="{{path('app_projet')}}">ajouter projet</a></li>
+                            <li><a class="dropdown-item" href="{{path('app_competance')}}">ajouter competance</a></li>
+                            <li><a class="dropdown-item" href="{{path('app_experiance')}}">ajouter une experiance</a></li>
+                            <li><a class="dropdown-item" href="{{path('app_all_message')}}">messagerie</a></li>
+                            <li><a class="dropdown-item" href="{{path('app_admin')}}">loveless</a></li>
                                 
                             {% endif %}
                         </ul>
+                {% endif %}
                     </div>
                 </div>
             </div>
